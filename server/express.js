@@ -54,13 +54,13 @@ app.get('*', (req, res) => {
      palette: {
        primary: {
        light: '#52c7b8',
-       main: '#009688',
+       main: '#0f4583',
        dark: '#00675b',
        contrastText: '#fff',
      },
      secondary: {
        light: '#ffd95b',
-       main: '#ffa726',
+       main: '#0f4583',
        dark: '#c77800',
        contrastText: '#000',
      },

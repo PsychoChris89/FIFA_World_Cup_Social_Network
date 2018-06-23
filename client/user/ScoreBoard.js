@@ -77,37 +77,19 @@ class FindPeople extends Component {
   render() {
     const {classes} = this.props
     return (<div>
+      
       <Paper className={classes.root} elevation={4}>
       <List>
-  
-        </List>
-     <Typography type="title" className={classes.title}>
-          Who to follow
-        </Typography>
-        <List>
-          
-          {this.state.users.map((item, i) => {
-              return <span key={i}>
-                <ListItem>
-                  <ListItemAvatar className={classes.avatar}>
-                      <Avatar src={'/api/users/photo/'+item._id}/>
-                  </ListItemAvatar>
-                  <ListItemText primary={item.name}/>
-                  <ListItemSecondaryAction className={classes.follow}>
-                    <Link to={"/user/" + item._id}>
-                      <IconButton variant="raised" color="secondary" className={classes.viewButton}>
-                        <ViewIcon/>
-                      </IconButton>
-                    </Link>
-                    <Button aria-label="Follow" variant="raised" color="primary" onClick={this.clickFollow.bind(this, item, i)}>
-                      Follow
-                    </Button>
-                  </ListItemSecondaryAction>
-                </ListItem>
-              </span>
-            })
-          }
-        </List>
+      <iframe width="100%" height="300" src="https://www.youtube.com/embed/GcXJ70LINvA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+     
+     <iframe src="https://widgets.worldfootball.com/competition/440#?c_header=#4e4d4d&c_team=#95c596&columns=mp,mw,md,ml&height_unit=percent&tabs=matches&width_unit=percent" width="100%" height="1000" frameborder="0"></iframe>
+      <iframe frameborder="0"  scrolling="no" width="100%" height="300" src="https://www.fctables.com/england/premier-league/iframe=/?type=top-scorers&lang_id=2&country=67&template=10&team=180231&timezone=America/Los_Angeles&time=24&limit=10&ppo=1&pte=1&pgo=1&pma=1&pas=1&ppe=1&width=520&height=700&font=Verdana&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF"></iframe>
+      </List>
+        
+<div display="block">
+        <iframe frameborder="0"  display="block" scrolling="no" width="100%" height="200" margin="0" src="https://www.fctables.com/teams/arsenal-180231/iframe/?type=team-last-match&lang_id=2&country=67&template=10&team=180231&timezone=America/Los_Angeles&time=24&width=520&height=200&font=Verdana&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&scfs=22&scfc=333333&scb=1&sclg=1&teamls=80&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF"></iframe>
+            </div>
+               
       </Paper>
       <Snackbar
           anchorOrigin={{

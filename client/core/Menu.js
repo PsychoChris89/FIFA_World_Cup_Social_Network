@@ -10,7 +10,7 @@ import {Link, withRouter} from 'react-router-dom'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#ffa726'}
+    return {color: '#ffffff'}
   else
     return {color: '#ffffff'}
 }
@@ -18,7 +18,7 @@ const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
       <Typography type="title" color="inherit">
-        MERN Social
+      2018 FIFA WORLD CUP™ SOCIAL
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
@@ -40,7 +40,7 @@ const Menu = withRouter(({history}) => (
       {
         auth.isAuthenticated() && (<span>
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
-            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Locker</Button>
           </Link>
           <Button color="inherit" onClick={() => {
               auth.signout(() => history.push('/'))

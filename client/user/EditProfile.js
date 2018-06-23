@@ -122,7 +122,7 @@ class EditProfile extends Component {
           <input accept="image/*" onChange={this.handleChange('photo')} className={classes.input} id="icon-button-file" type="file" />
           <label htmlFor="icon-button-file">
             <Button variant="raised" color="default" component="span">
-              Upload
+              Upload Image
               <FileUpload/>
             </Button>
           </label> <span className={classes.filename}>{this.state.photo ? this.state.photo.name : ''}</span><br/>

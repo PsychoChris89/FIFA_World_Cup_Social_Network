@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
 import Card, {CardContent, CardMedia} from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
-import seashellImg from './../assets/images/seashell.jpg'
+import seashellImg from './../assets/images/FIFA_World_Cup.jpg'
 import {Link} from 'react-router-dom'
 import Grid from 'material-ui/Grid'
 import auth from './../auth/auth-helper'
 import FindPeople from './../user/FindPeople'
+import ScoreBoard from './../user/ScoreBoard'
 import Newsfeed from './../post/Newsfeed'
 
 const styles = theme => ({
@@ -55,12 +56,12 @@ class Home extends Component {
             <Grid item xs={12}>
               <Card className={classes.card}>
                 <Typography type="headline" component="h2" className={classes.title}>
-                  Home Page
+                Welcome to the 2018 FIFA WORLD CUP™ SOCIAL
                 </Typography>
-                <CardMedia className={classes.media} image={seashellImg} title="Unicorn Shells"/>
+                <CardMedia className={classes.media} image={seashellImg} title="GOOOOOOAAAAAALLLLLLLL!!!!"/>
                 <CardContent>
                   <Typography type="body1" component="p">
-                    Welcome to the MERN Social home page. 
+                  Mission: Give Soccer Fans the power to build community and bring the office or classroom closer together. Fans use this social app. to stay connected with friends and family, to discover what's going on in the FIFA World Cup, and to share and express what matters to them.
                   </Typography>
                 </CardContent>
               </Card>
@@ -69,10 +70,13 @@ class Home extends Component {
         }
         {!this.state.defaultPage &&
           <Grid container spacing={24}>
-            <Grid item xs={8} sm={7}>
+           <Grid item xs={12} sm={4}>
+              <ScoreBoard/>
+            </Grid>
+            <Grid item xs={12} sm={5}>
               <Newsfeed/>
             </Grid>
-            <Grid item xs={6} sm={5}>
+            <Grid item xs={12} sm={3}>
               <FindPeople/>
             </Grid>
           </Grid>

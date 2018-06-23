@@ -61,7 +61,7 @@ class Newsfeed extends Component {
     return (
       <Card className={classes.card}>
         <Typography type="title" className={classes.title}>
-          Newsfeed
+          The Field
         </Typography>
         <Divider/>
         <NewPost addUpdate={this.addPost}/>
