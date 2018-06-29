@@ -30,6 +30,25 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
+* [MERN](http://mern.io/) - Combination of Javascript technologies used to develop fullstack web applications
+* [npm](https://www.npmjs.com/) - Package manager for JavaScript
+
+  #### Front-end
+* [React](https://reactjs.org/) -  JavaScript library for building user interfaces
+* [Axios](https://github.com/mzabriskie/axios) - Promise based HTTP client for the browser and node.js
+* [Material - UI ](https://material-ui.com/) - React components that implement Google's Material Design.
+* [Babel](https://babeljs.io/) - JavaScript compiler
+* [Webpack](https://webpack.js.org/) - Module bundler for modern JavaScript applications
+
+  #### Back-end
+* [Node.js](https://nodemon.io/) -  JavaScript run-time environment that executes JavaScript code server-side
+* [Nodemon](https://nodemon.io/) - Auto-refresh the server on code change
+* [express](https://nodemon.io/) -   Web application framework for Node.js
+* [JWT](https://jwt.io/) - Allows you to decode, verify and generate JSON Web Tokens.
+* [Mongoose](http://mongoosejs.com/) - Elegant mongodb object modeling for node.js
+* [MongoDB](http://mongoosejs.com/) - Document-oriented database program
+
+
 
 
 
