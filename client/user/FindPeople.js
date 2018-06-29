@@ -78,9 +78,7 @@ class FindPeople extends Component {
     const {classes} = this.props
     return (<div>
       <Paper className={classes.root} elevation={4}>
-      <List>
-  
-        </List>
+
      <Typography type="title" className={classes.title}>
           Who to follow
         </Typography>
