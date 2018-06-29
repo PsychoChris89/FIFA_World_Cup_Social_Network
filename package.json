@@ -17,8 +17,7 @@
   },
   "scripts": {
     "start": "node ./dist/server.generated.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js"
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
   
   },
   "engines": {
