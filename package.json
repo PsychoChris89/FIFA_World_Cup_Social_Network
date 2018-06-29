@@ -15,6 +15,8 @@
     "type": "git",
     "url": "https://github.com/PsychoChris89/FIFA_World_Cup_Social_Network.git"
   },
+  "homepage": "https://github.com/PsychoChris89/FIFA_World_Cup_Social_Network",
+  "main": "./dist/server.generated.js",
   "scripts": {
     "development": "nodemon",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
