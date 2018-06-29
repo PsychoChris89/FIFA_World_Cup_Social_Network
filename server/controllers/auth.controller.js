@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken'
 import expressJwt from 'express-jwt'
 import config from './../../config/config'
 
+
+//SIGNIN Authorization Controller
 const signin = (req, res) => {
   User.findOne({
     "email": req.body.email
@@ -35,6 +37,7 @@ const signin = (req, res) => {
   })
 }
 
+//SIGNOUT Authorization Controller
 const signout = (req, res) => {
   res.clearCookie("t")
   return res.status('200').json({
@@ -42,11 +45,13 @@ const signout = (req, res) => {
   })
 }
 
+//REQUIRES SIGNIN Authorization Controller
 const requireSignin = expressJwt({
   secret: config.jwtSecret,
   userProperty: 'auth'
 })
 
+//AUTHORIZATION BY USER PROFILE Authorization Controller
 const hasAuthorization = (req, res, next) => {
   const authorized = req.profile && req.auth && req.profile._id == req.auth._id
   if (!(authorized)) {

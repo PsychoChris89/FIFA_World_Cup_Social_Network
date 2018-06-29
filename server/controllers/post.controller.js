@@ -30,6 +30,7 @@ const create = (req, res, next) => {
   })
 }
 
+//POSYBYID NAME post controller
 const postByID = (req, res, next, id) => {
   Post.findById(id).populate('postedBy', '_id name').exec((err, post) => {
     if (err || !post)
@@ -41,6 +42,7 @@ const postByID = (req, res, next, id) => {
   })
 }
 
+//LISTBYUSER post controller
 const listByUser = (req, res) => {
   Post.find({postedBy: req.profile._id})
   .populate('comments', 'text created')
@@ -57,6 +59,7 @@ const listByUser = (req, res) => {
   })
 }
 
+//LISTNEWSFEED post controller
 const listNewsFeed = (req, res) => {
   let following = req.profile.following
   following.push(req.profile._id)
@@ -75,6 +78,7 @@ const listNewsFeed = (req, res) => {
   })
 }
 
+//REMOVE post controller
 const remove = (req, res) => {
   let post = req.post
     post.remove((err, deletedPost) => {
@@ -87,11 +91,13 @@ const remove = (req, res) => {
     })
 }
 
+//PHOTO or IMAGE post controller
 const photo = (req, res, next) => {
     res.set("Content-Type", req.post.photo.contentType)
     return res.send(req.post.photo.data)
 }
 
+//LIKE post controller
 const like = (req, res) => {
   Post.findByIdAndUpdate(req.body.postId, {$push: {likes: req.body.userId}}, {new: true})
   .exec((err, result) => {
@@ -104,6 +110,7 @@ const like = (req, res) => {
   })
 }
 
+//UNLIKE post controller
 const unlike = (req, res) => {
   Post.findByIdAndUpdate(req.body.postId, {$pull: {likes: req.body.userId}}, {new: true})
   .exec((err, result) => {
@@ -116,7 +123,7 @@ const unlike = (req, res) => {
   })
 }
 
-
+//COMMENT post controller
 const comment = (req, res) => {
   let comment = req.body.comment
   comment.postedBy = req.body.userId
@@ -132,6 +139,8 @@ const comment = (req, res) => {
     res.json(result)
   })
 }
+
+//UNCOMMENT post controller
 const uncomment = (req, res) => {
   let comment = req.body.comment
   Post.findByIdAndUpdate(req.body.postId, {$pull: {comments: {_id: comment._id}}}, {new: true})
@@ -147,6 +156,7 @@ const uncomment = (req, res) => {
   })
 }
 
+//ISPOSTER by user post controller
 const isPoster = (req, res, next) => {
   let isPoster = req.post && req.auth && req.post.postedBy._id == req.auth._id
   if(!isPoster){

@@ -17,8 +17,9 @@
   },
   "scripts": {
     "start": "nodemon",
-    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js"
+  
     
  
   },

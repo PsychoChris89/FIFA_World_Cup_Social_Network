@@ -5,6 +5,8 @@ import formidable from 'formidable'
 import fs from 'fs'
 import profileImage from './../../client/assets/images/profile-pic.png'
 
+
+//CREATE USER controller
 const create = (req, res, next) => {
   const user = new User(req.body)
   user.save((err, result) => {
@@ -22,6 +24,8 @@ const create = (req, res, next) => {
 /**
  * Load user and append to req.
  */
+
+ //USER'S FOLLOWINGS AND FOLLOWERS controller
 const userByID = (req, res, next, id) => {
   User.findById(id)
     .populate('following', '_id name')
@@ -35,12 +39,14 @@ const userByID = (req, res, next, id) => {
   })
 }
 
+//READ USER PROFILE controller
 const read = (req, res) => {
   req.profile.hashed_password = undefined
   req.profile.salt = undefined
   return res.json(req.profile)
 }
 
+//USER LIST PROFILE controller
 const list = (req, res) => {
   User.find((err, users) => {
     if (err) {
@@ -52,6 +58,7 @@ const list = (req, res) => {
   }).select('name email updated created')
 }
 
+//UPDATE USER PROFILE controller
 const update = (req, res, next) => {
   let form = new formidable.IncomingForm()
   form.keepExtensions = true

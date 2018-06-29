@@ -9,6 +9,8 @@ import Grid from 'material-ui/Grid'
 import auth from './../auth/auth-helper'
 import FindPeople from './../user/FindPeople'
 import ScoreBoard from './../user/ScoreBoard'
+import LiveScores from './../user/LiveScores'
+import PlaceHolder from './../user/PlaceHolder'
 import Newsfeed from './../post/Newsfeed'
 
 const styles = theme => ({
@@ -70,6 +72,12 @@ class Home extends Component {
         }
         {!this.state.defaultPage &&
           <Grid container spacing={24}>
+                 <Grid item xs={12} sm={12}>
+              <LiveScores/>
+            </Grid>
+                 
+              
+
            <Grid item xs={12} sm={4}>
               <ScoreBoard/>
             </Grid>

@@ -45,8 +45,25 @@ const Menu = withRouter(({history}) => (
           <Button color="inherit" onClick={() => {
               auth.signout(() => history.push('/'))
             }}>Sign out</Button>
+        
         </span>)
       }
+
+      <Button size="medium" color="inherit" href="https://www.fifa.com/worldcup/">
+      FIFA WORLD CUP™ Website
+          </Button>
+          <Button size="medium" color="inherit" href="http://fcpredictor.espn.com/us/clienthome.do">
+      ESPN Match Predictor 2018
+          </Button>
+          <Button size="medium" color="inherit" href="https://www.foxsports.com/soccer/fifa-world-cup">
+          Stream on FOX Sports
+          </Button>
+          <Button size="medium" color="inherit" href="http://livescore-api.com/worldcup/">
+          Livescore API World Cup 2018 
+          </Button>
+          <Button size="medium" color="inherit" href="https://github.com/lsv/fifa-worldcup-2018">
+          GITHUB JSON DATA
+          </Button>
     </Toolbar>
   </AppBar>
 ))
