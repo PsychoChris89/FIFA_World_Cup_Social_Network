@@ -4,7 +4,7 @@ const CURRENT_WORKING_DIR = process.cwd()
 
 const config = {
     name: "browser",
-    mode: "production",
+    mode: "development",
     devtool: 'eval-source-map',
     entry: [
         'react-hot-loader/patch',
