@@ -1,4 +1,4 @@
-# FIFA WORLD CUP SOCIAL NETWORK using MERN Stack.
+# FIFA WORLD CUP SOCIAL NETWORK using MERN Stack
 
 A simple social media application with users, posts, likes and comments - developed using React, Node, Express and MongoDB. 
 The views needed for the MERN Social application will be developed by extending and modifying the existing React components in the MERN skeleton application.
@@ -15,11 +15,13 @@ make up the MERN Social frontend and also exposes the composition structure we w
 ## React Compnonent View
 <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/36436123_10155419009510896_5938018038791012352_n.jpg?_nc_cat=0&oh=081a7b7b4393a0e18480bea94fe29646&oe=5BA33F21" align="center" width="100%" alt="Views">
 
-RESTful Application architecture requires that a client make a request to the server in order to retrieve or modify data on the server.
-There are 4 basic HTTP verbs we use in requests to interact with resources in a REST system: GET, POST, PUT, DELETE
+## RESTful Application architecture:
+
+* requires that a client make a request to the server in order to retrieve or modify data on the server.
+* There are 4 basic HTTP verbs we use in requests to interact with resources in a REST system: GET, POST, PUT, DELETE
 Models contains CRUD functions ( CREATE, READ, UPDATE, DELETE) corresponds to the HTTP methods for persistent storage in relational databases.
 
-MVC software architecture:
+## MVC software architecture:
 
 * MODEL is the application's dynamical data structure, independent of the user interface. It directly manages the data, logic and rules of the application. Post.Model and User.Model was used.
 
@@ -114,8 +116,4 @@ Add additional notes about how to deploy this on a live system
 <a href="https://www.packtpub.com/web-development/full-stack-react-projects"><img src="https://s3.amazonaws.com/mernbook/git+/B09550_MockupSmall.png" align="center" width="400" alt="Full-Stack React Projects"></a>
 
 
-
-
-
-### [Live Demo](http://social.mernbook.com/ "MERN Social")
 
