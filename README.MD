@@ -1,4 +1,4 @@
-# FIFA WORLD CUP SOCIAL NETWORK webapplication using MERN Stack.
+# FIFA WORLD CUP SOCIAL NETWORK using MERN Stack.
 
 A simple social media application with users, posts, likes and comments - developed using React, Node, Express and MongoDB. 
 The views needed for the MERN Social application will be developed by extending and modifying the existing React components in the MERN skeleton application.
