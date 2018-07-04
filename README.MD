@@ -27,6 +27,30 @@ MVC software architecture:
 
 * CONTROLLER for authorization, posts, and user profiles are received by user input and makes calls to model objects and the view to perform appropriate actions.
 
+## Security - JSON web tokens – client-side or server-side storage
+Auth-related security implementation is simplified with JSON Web Tokens.  With the JWT authentication mechanism, the client side becomes responsible for maintaining user state. Once the user signs in, the token sent by the server is stored and maintained by the client-side code on browser storage, such as sessionStorage. Hence, it is also up to the client-side code to invalidate the token by removing it when a user signs out or needs to be signed out. This mechanism works out well for most applications that need minimal authentication to protect access to resources. However, for instances where it may be necessary to track user sign-ins, sign-outs, and to let the server know that a specific token is no longer valid for sign-in, just the client-side handling of the tokens is not enough.
+
+## How JWT works
+When a user successfully signs in using their credentials, the server side generates a JWT signed with a secret key and a unique user detail. Then, this token is returned to the requesting client to be saved locally either in localStorage, sessionStorage, or a cookie in the browser, essentially handing over the responsibility of maintaining user state to the client side:
+
+<img src="https://s3.amazonaws.com/mernbook/git+/B09550_MockupSmall.png" align="center" width="400" alt="Full-Stack React Projects">
+
+For HTTP requests made following a successful sign-in, specially requests for API endpoints that are protected and have restricted access, the client side has to attach this token to the request. 
+
+This token will then be required for verification when a user tries to view any user profiles, update their account details, or delete their user account.  Implementing the user model to store and validate user data, then integrating it with APIs to perform CRUD operations based on auth with JWT, will produce a functioning standalone backend. 
+
+## Securing password storage
+While storing user credentials for authentication in the User collection, we made sure that the original password string provided by the user is never stored directly in the database. Instead we generated a hash of the password along with a salt value using the crypto module in Node.
+
+In user.model.js from our applications, we defined the following functions to generate the hashed password and salt value.
+
+With this implementation, every time a user enters a password to sign in, a hash is generated with the salt. If the generated hash matches the stored hash, then the password is correct, otherwise the password is wrong. So in order to check whether a password is correct, the salt is required, and hence it is stored with the user details in the database along with the hash.
+
+This is standard practice for securing passwords stored for user authentication, but there
+are other advanced approaches that may be explored if a specific application's security
+requirements demand it. Some options that can be considered include multi-iteration hashing approaches, other secure hashing algorithms, limiting login attempts per user account, and multi-level authentication with additional steps such as answering security questions or entering security codes.
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
