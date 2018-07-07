@@ -36,6 +36,8 @@ Auth-related security implementation is simplified with JSON Web Tokens.  With t
 When a user successfully signs in using their credentials, the server side generates a JWT signed with a secret key and a unique user detail. Then, this token is returned to the requesting client to be saved locally either in localStorage, sessionStorage, or a cookie in the browser, essentially handing over the responsibility of maintaining user state to the client side:
 
 <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/36686749_10155425595980896_8900476996836917248_n.jpg?_nc_cat=0&oh=ea147b7824cd66d8c3af85cf7e2fa926&oe=5BA62C64" align="center" margin-left="auto" margin-right="auto" width="100%" alt="JWT">
+<img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/36794350_10155432920500896_7041912221131079680_o.jpg?_nc_cat=0&oh=142d6063aa304b304071e3d20755114d&oe=5BD8F652" align="center" margin-left="auto" margin-right="auto" width="100%" alt="JWT">
+<img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/36776255_10155432920670896_3546828884034977792_o.jpg?_nc_cat=0&oh=3a7d953d4332745065c862b78516f2ef&oe=5BE32940" align="center" margin-left="auto" margin-right="auto" width="100%" alt="JWT">
 
 For HTTP requests made following a successful sign-in, specially requests for API endpoints that are protected and have restricted access, the client side has to attach this token to the request. 
 
